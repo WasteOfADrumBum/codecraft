@@ -1,0 +1,18 @@
+// _typography-mixins.scss
+
+// Import Bootstrap's typography mixins
+@import '~bootstrap/scss/mixins';
+
+// Custom typography mixins
+@mixin heading {
+}
+
+@mixin body {
+}
+
+@mixin link {
+	text-decoration: none;
+}
+
+@mixin button {
+}

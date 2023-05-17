@@ -1,0 +1,48 @@
+$prefix: 'bs-';
+
+// Colors
+$primary: #a856bf;
+$secondary: #2ef2df;
+$success: #f2be5c;
+$info: #f2955e;
+$warning: #400101;
+$danger: #ff0000;
+$light: #ffffff;
+$dark: #000000;
+
+// Theme colors
+$theme-colors: (
+	'primary': $primary,
+	'secondary': $secondary,
+	'success': $success,
+	'info': $info,
+	'warning': $warning,
+	'danger': $danger,
+	'light': $light,
+	'dark': $dark,
+);
+
+// Body colors
+$body-bg: #f0f0f0;
+$body-color: #111;
+
+/* Width and height of the scroll bar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+/* Background color of the scroll bar track */
+::-webkit-scrollbar-track {
+	background-color: #2b3036;
+}
+
+/* Color of the scroll bar handle */
+::-webkit-scrollbar-thumb {
+	background-color: $primary;
+}
+
+/* On hover, color of the scroll bar handle */
+::-webkit-scrollbar-thumb:hover {
+	background-color: $secondary;
+}

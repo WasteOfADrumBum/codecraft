@@ -1,0 +1,66 @@
+$red: #ff0000;
+$red-darker: darken($red, 10%);
+$red-dark: darken($red, 20%);
+$red-mid: darken($red, 30%);
+$red-light: darken($red, 40%);
+$red-lighter: darken($red, 50%);
+
+$orange: #ff7f00;
+$orange-darker: darken($orange, 10%);
+$orange-dark: darken($orange, 20%);
+$orange-mid: darken($orange, 30%);
+$orange-light: darken($orange, 40%);
+$orange-lighter: darken($orange, 50%);
+
+$yellow: #ffff00;
+$yellow-darker: darken($yellow, 10%);
+$yellow-dark: darken($yellow, 20%);
+$yellow-mid: darken($yellow, 30%);
+$yellow-light: darken($yellow, 40%);
+$yellow-lighter: darken($yellow, 50%);
+
+$green: #00ff00;
+$green-darker: darken($green, 10%);
+$green-dark: darken($green, 20%);
+$green-mid: darken($green, 30%);
+$green-light: darken($green, 40%);
+$green-lighter: darken($green, 50%);
+
+$blue: #0000ff;
+$blue-darker: darken($blue, 10%);
+$blue-dark: darken($blue, 20%);
+$blue-mid: darken($blue, 30%);
+$blue-light: darken($blue, 40%);
+$blue-lighter: darken($blue, 50%);
+
+$indigo: #4b0082;
+$indigo-darker: darken($indigo, 10%);
+$indigo-dark: darken($indigo, 20%);
+$indigo-mid: darken($indigo, 30%);
+$indigo-light: darken($indigo, 40%);
+$indigo-lighter: darken($indigo, 50%);
+
+$violet: #8a2be2;
+$violet-darker: darken($violet, 10%);
+$violet-dark: darken($violet, 20%);
+$violet-mid: darken($violet, 30%);
+$violet-light: darken($violet, 40%);
+$violet-lighter: darken($violet, 50%);
+
+$white: #ffffff;
+$lightgray: #d3d3d3;
+$gray: #808080;
+$darkgray: #707070;
+$black: #000000;
+
+$react-blue: #61dafb;
+$bootstrap-blue: #007bff;
+$python-yellow: #ffd43b;
+$node-green: #3c873a;
+$django-green: #0c4b33;
+$postgres-blue: #336791;
+$mongodb-green: #4db33d;
+$facebook-blue: #3b5998;
+$twitter-blue: #1da1f2;
+$github-purple: #6e5494;
+$youtube-red: #ff0000;

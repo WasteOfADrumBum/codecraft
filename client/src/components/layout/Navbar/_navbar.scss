@@ -1,0 +1,23 @@
+@import '../../../assets/styles/global';
+
+nav {
+	.navbar-nav {
+		.nav-item {
+			.nav-link {
+				color: $secondary !important;
+
+				&:hover {
+					color: rgba($secondary, 0.5) !important;
+				}
+			}
+		}
+	}
+
+	.navbar-brand {
+		color: $secondary !important;
+
+		&:hover {
+			color: rgba($secondary, 0.5) !important;
+		}
+	}
+}

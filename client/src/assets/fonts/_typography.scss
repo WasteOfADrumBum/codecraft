@@ -1,0 +1,36 @@
+// _typography.scss
+
+// Import Bootstrap's typography mixins
+@import '~bootstrap/scss/mixins';
+
+// Custom typography styles
+@import './_typography-mixins.scss';
+
+// Example heading styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// Apply Bootstrap's heading mixin
+	@include heading();
+}
+
+// Example paragraph style
+p {
+	// Apply Bootstrap's body mixin
+	@include body();
+}
+
+// Example link style
+a {
+	// Apply Bootstrap's link mixin
+	@include link();
+}
+
+// Example button style
+.btn {
+	// Apply Bootstrap's button mixin
+	@include button();
+}
