@@ -33,6 +33,11 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li className='nav-item'>
+							<Link className='nav-link' to='/redux'>
+								<i className='fab fa-react' />
+							</Link>
+						</li>
+						<li className='nav-item'>
 							<Link className='nav-link' to='/dashboard'>
 								<i className='fas fa-tachometer-alt' />
 							</Link>

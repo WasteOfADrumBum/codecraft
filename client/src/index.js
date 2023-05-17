@@ -6,7 +6,7 @@ import { createRoot } from 'react-dom/client'
 import './assets/styles/_global.scss'
 
 // Components
-import { About, App, Contact, Dashboard, Login, NotFound } from './components/views'
+import { About, App, Contact, Dashboard, Login, NotFound, Redux } from './components/views'
 import { Navbar, Footer } from './components/layout'
 
 // Helper function to check if the user is authenticated
@@ -35,6 +35,7 @@ createRoot(document.getElementById('root')).render(
 				<Routes>
 					<Route path='/' element={<App />} />
 					<Route path='/login' element={<Login />} />
+					<Route path='/redux' element={<Redux />} />
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/dashboard' element={<PrivateRoute element={<Dashboard />} />} />
@@ -46,4 +47,3 @@ createRoot(document.getElementById('root')).render(
 		,
 	</Provider>,
 )
-
