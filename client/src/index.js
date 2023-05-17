@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store/store'
 import { createRoot } from 'react-dom/client'
 import './assets/styles/_global.scss'
 
@@ -26,19 +28,22 @@ const PublicRoute = ({ element: Element, restricted, ...rest }) => {
 }
 
 createRoot(document.getElementById('root')).render(
-	<BrowserRouter>
-		<Navbar />
-		<div className='container-lg' style={{ marginBottom: '5rem' }}>
-			<Routes>
-				<Route path='/' element={<App />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/contact' element={<Contact />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/dashboard' element={<PrivateRoute element={<Dashboard />} />} />
-				<Route path='*' element={<NotFound />} />
-			</Routes>
-		</div>
-		<Footer />
-	</BrowserRouter>,
+	<Provider store={store}>
+		<BrowserRouter>
+			<Navbar />
+			<div className='container-lg' style={{ marginBottom: '5rem' }}>
+				<Routes>
+					<Route path='/' element={<App />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/dashboard' element={<PrivateRoute element={<Dashboard />} />} />
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+			</div>
+			<Footer />
+		</BrowserRouter>
+		,
+	</Provider>,
 )
 
