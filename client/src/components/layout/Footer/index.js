@@ -5,7 +5,7 @@ import './_footer.scss'
 const Footer = () => {
 	return (
 		<footer
-			className='d-flex justify-content-between align-items-center py-3 mt-4 px-4 border-top fixed-bottom bg-body-tertiary'
+			className='d-flex justify-content-between align-items-center py-3 mt-4 px-4 border-top fixed-bottom bg-dark'
 			data-bs-theme='dark'>
 			<div className='col-md-4 d-flex align-items-center'>
 				<Link

@@ -4,7 +4,7 @@ import './_navbar.scss'
 
 const Navbar = () => {
 	return (
-		<nav className='navbar navbar-expand-lg navbar-dark bg-body-tertiary sticky-top' data-bs-theme='dark'>
+		<nav className='navbar navbar-expand-lg navbar-dark bg-dark sticky-top' data-bs-theme='dark'>
 			<div className='container-fluid'>
 				<Link className='navbar-brand' to='/'>
 					<i className='fa-brands fa-react me-2' />

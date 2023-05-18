@@ -1,18 +1,24 @@
 {
-  "name": "mern-redux",
-  "version": "1.0.0",
-  "description": "MERN Stack with Redux",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "MERN",
-    "Redux"
-  ],
-  "author": "Joshua M. Small",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
-  }
+	"name": "mern-redux",
+	"version": "1.0.0",
+	"description": "MERN Stack with Redux",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "concurrently \"npm run server\" \"npm run client\" --no-deprecation",
+		"server": "node server/server.js",
+		"client": "npm start --prefix client"
+	},
+	"keywords": [
+		"MERN",
+		"Redux"
+	],
+	"author": "Joshua M. Small",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"concurrently": "^8.0.1"
+	}
 }

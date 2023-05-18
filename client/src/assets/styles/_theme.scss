@@ -8,7 +8,7 @@ $info: #f2955e;
 $warning: #400101;
 $danger: #ff0000;
 $light: #ffffff;
-$dark: #000000;
+$dark: #2b3036;
 
 // Theme colors
 $theme-colors: (
@@ -34,7 +34,7 @@ $body-color: #111;
 
 /* Background color of the scroll bar track */
 ::-webkit-scrollbar-track {
-	background-color: #2b3036;
+	background-color: $dark;
 }
 
 /* Color of the scroll bar handle */
