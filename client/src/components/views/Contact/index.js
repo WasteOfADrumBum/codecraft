@@ -57,47 +57,51 @@ const Contact = () => {
 				</div>
 				<div className='col-12 col-md-6'>
 					<form onSubmit={handleSubmit}>
-						<div className='mb-3'>
-							<label htmlFor='name' className='form-label'>
-								Name:
-							</label>
-							<input
-								type='text'
-								id='name'
-								className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-							/>
-							{errors.name && <div className='invalid-feedback'>{errors.name}</div>}
+						<div className='row'>
+							<div className='col-12 mb-2'>
+								<label htmlFor='name' className='form-label'>
+									Name:
+								</label>
+								<input
+									type='text'
+									id='name'
+									className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+								/>
+								{errors.name && <div className='invalid-feedback'>{errors.name}</div>}
+							</div>
+							<div className='col-12 mb-2'>
+								<label htmlFor='email' className='form-label'>
+									Email:
+								</label>
+								<input
+									type='email'
+									id='email'
+									className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+								{errors.email && <div className='invalid-feedback'>{errors.email}</div>}
+							</div>
+							<div className='col-12 mb-2'>
+								<label htmlFor='message' className='form-label'>
+									Message:
+								</label>
+								<textarea
+									id='message'
+									rows={8}
+									className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+									value={message}
+									onChange={(e) => setMessage(e.target.value)}></textarea>
+								{errors.message && <div className='invalid-feedback'>{errors.message}</div>}
+							</div>
+							<div className='col-12 text-end'>
+								<button type='submit' className='btn btn-primary text-light'>
+									<i className='fas fa-paper-plane' />
+								</button>
+							</div>
 						</div>
-						<div className='mb-3'>
-							<label htmlFor='email' className='form-label'>
-								Email:
-							</label>
-							<input
-								type='email'
-								id='email'
-								className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-							/>
-							{errors.email && <div className='invalid-feedback'>{errors.email}</div>}
-						</div>
-						<div className='mb-3'>
-							<label htmlFor='message' className='form-label'>
-								Message:
-							</label>
-							<textarea
-								id='message'
-								rows={8}
-								className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-								value={message}
-								onChange={(e) => setMessage(e.target.value)}></textarea>
-							{errors.message && <div className='invalid-feedback'>{errors.message}</div>}
-						</div>
-						<button type='submit' className='btn btn-primary'>
-							Submit
-						</button>
 					</form>
 				</div>
 			</div>

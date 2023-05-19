@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../../layout'
+import { Header, SubHeader } from '../../layout'
 import profileImg from '../../../assets/images/home_img.jpg'
 
 const App = () => {
@@ -51,9 +51,9 @@ const App = () => {
 					</p>
 				</div>
 			</div>
+			<SubHeader icon='fas fa-code' title='Title' description='desc' />
 		</div>
 	)
 }
 
 export default App
-
