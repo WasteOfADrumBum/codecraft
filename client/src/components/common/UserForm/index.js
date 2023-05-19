@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { StateCountrySelect, TransitLine } from '../../common'
 
 const UserForm = ({ onSubmit, onCancel }) => {
-	const [age, setAge] = useState(0)
 	const [step, setStep] = useState(1)
+	const [selectedImage, setSelectedImage] = useState(null)
 	const [user, setUser] = useState({
 		first: '',
 		middle: '',
@@ -25,6 +25,16 @@ const UserForm = ({ onSubmit, onCancel }) => {
 	})
 	const [errors, setErrors] = useState({})
 
+	const images = [
+		{ name: 'profile_dark.png', path: '../../../assets/images/profile_dark.png' },
+		{ name: 'profile_danger.png', path: '../../../assets/images/profile_danger.png' },
+		{ name: 'profile_info.png', path: '../../../assets/images/profile_info.png' },
+		{ name: 'profile_primary.png', path: '../../../assets/images/profile_primary.png' },
+		{ name: 'profile_secondary.png', path: '../../../assets/images/profile_secondary.png' },
+		{ name: 'profile_success.png', path: '../../../assets/images/profile_success.png' },
+		{ name: 'profile_warning.png', path: '../../../assets/images/profile_warning.png' },
+	]
+
 	const handleChange = (e) => {
 		const { name, value } = e.target
 
@@ -39,13 +49,23 @@ const UserForm = ({ onSubmit, onCancel }) => {
 				calculatedAge--
 			}
 
-			setAge(calculatedAge)
+			setUser((prevUser) => ({
+				...prevUser,
+				age: calculatedAge.toString(), // Update age as a string
+				[name]: value,
+			}))
+		} else if (name === 'profileImage') {
+			setUser((prevUser) => ({
+				...prevUser,
+				[name]: value,
+			}))
+		} else {
+			setUser((prevUser) => ({
+				...prevUser,
+				[name]: value,
+				profileImage: selectedImage, // Set the selected image path
+			}))
 		}
-
-		setUser((prevUser) => ({
-			...prevUser,
-			[name]: value,
-		}))
 	}
 
 	const handleAddressChange = (e) => {
@@ -254,7 +274,7 @@ const UserForm = ({ onSubmit, onCancel }) => {
 				<label htmlFor='age' className='form-label'>
 					Age:
 				</label>
-				<input type='number' name='age' value={age} readOnly className='form-control' />
+				<input type='number' name='age' value={user.age} onChange={handleChange} className='form-control' />
 			</div>
 			<div className='col-md-12 mb-3'>
 				<label htmlFor='street' className='form-label'>
@@ -330,6 +350,18 @@ const UserForm = ({ onSubmit, onCancel }) => {
 					onChange={handleChange}
 					className='form-control'
 				/>
+			</div>
+			<div className='row'>
+				{images.map((image, index) => (
+					<div key={index} className='col-md-2'>
+						<img
+							src={image.path}
+							alt={image.name}
+							className={`img-thumbnail ${selectedImage === image.path ? 'selected' : ''}`}
+							onClick={() => setSelectedImage(image.path)}
+						/>
+					</div>
+				))}
 			</div>
 			<div className='d-flex justify-content-between'>
 				<button type='button' className='btn btn-primary text-light' onClick={handlePreviousStep}>

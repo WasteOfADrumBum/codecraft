@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import UserUpdateModal from '../UserUpdateModal'
 
 const UserTable = ({ users }) => {
 	const [imageSources, setImageSources] = useState({})
@@ -32,6 +33,7 @@ const UserTable = ({ users }) => {
 						<th>Email</th>
 						<th>Username</th>
 						<th>Address</th>
+						<th />
 					</tr>
 				</thead>
 				<tbody>
@@ -74,6 +76,9 @@ const UserTable = ({ users }) => {
 								) : (
 									'N/A'
 								)}
+							</td>
+							<td>
+								<UserUpdateModal userId={user._id} />
 							</td>
 						</tr>
 					))}

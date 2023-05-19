@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { UserTable, UserForm } from '../../common'
 import { Header } from '../../layout'
-import { getAllUsers, createUser, getUserById, updateUser, deleteUser } from '../../../api/userApis'
+import { getAllUsers, createUser } from '../../../api/userApis'
 
 const UsersDashboard = () => {
 	const [showUserForm, setShowUserForm] = useState(false)
