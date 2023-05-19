@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
 import { StateCountrySelect, TransitLine } from '../../common'
+import profileDark from '../../../assets/images/profile_dark.png'
+import profileDanger from '../../../assets/images/profile_danger.png'
+import profileInfo from '../../../assets/images/profile_info.png'
+import profilePrimary from '../../../assets/images/profile_primary.png'
+import profileSecondary from '../../../assets/images/profile_secondary.png'
+import profileSuccess from '../../../assets/images/profile_success.png'
+import profileWarning from '../../../assets/images/profile_warning.png'
 
 const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 	const [step, setStep] = useState(1)
-	const [selectedImage, setSelectedImage] = useState(null)
+	const [selectedImage, setSelectedImage] = useState('')
 	const [user, setUser] = useState({
 		first: '',
 		middle: '',
@@ -26,13 +33,13 @@ const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 	const [errors, setErrors] = useState({})
 
 	const images = [
-		{ name: 'profile_dark.png', path: '../../../assets/images/profile_dark.png' },
-		{ name: 'profile_danger.png', path: '../../../assets/images/profile_danger.png' },
-		{ name: 'profile_info.png', path: '../../../assets/images/profile_info.png' },
-		{ name: 'profile_primary.png', path: '../../../assets/images/profile_primary.png' },
-		{ name: 'profile_secondary.png', path: '../../../assets/images/profile_secondary.png' },
-		{ name: 'profile_success.png', path: '../../../assets/images/profile_success.png' },
-		{ name: 'profile_warning.png', path: '../../../assets/images/profile_warning.png' },
+		{ name: 'profile_dark.png', path: profileDark },
+		{ name: 'profile_danger.png', path: profileDanger },
+		{ name: 'profile_info.png', path: profileInfo },
+		{ name: 'profile_primary.png', path: profilePrimary },
+		{ name: 'profile_secondary.png', path: profileSecondary },
+		{ name: 'profile_success.png', path: profileSuccess },
+		{ name: 'profile_warning.png', path: profileWarning },
 	]
 
 	console.log(allUsers)
@@ -65,7 +72,7 @@ const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 			setUser((prevUser) => ({
 				...prevUser,
 				[name]: value,
-				profileImage: selectedImage, // Set the selected image path
+				profileImage: selectedImage.name, // Set the selected image path
 			}))
 		}
 	}
@@ -384,12 +391,13 @@ const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 				/>
 			</div>
 			<div className='row'>
+				{/* On Click is not working */}
 				{images.map((image, index) => (
 					<div key={index} className='col-md-2'>
 						<img
 							src={image.path}
 							alt={image.name}
-							className={`img-thumbnail ${selectedImage === image.path ? 'selected' : ''}`}
+							className={`img-thumbnail ${selectedImage === image.path ? 'selected' : ''} mb-4`}
 							onClick={() => setSelectedImage(image.path)}
 						/>
 					</div>
