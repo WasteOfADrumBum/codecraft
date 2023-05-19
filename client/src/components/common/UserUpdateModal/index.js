@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { getUserById, updateUser } from '../../../api/userApis'
 import { StateCountrySelect } from '../../common'
 
 const UserUpdateModal = ({ userId }) => {
-	const navigate = useNavigate()
 	const [user, setUser] = useState({})
 	const [showModal, setShowModal] = useState(false)
 

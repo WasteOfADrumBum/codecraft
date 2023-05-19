@@ -48,19 +48,22 @@ const UsersDashboard = () => {
 		setShowUserForm(false)
 	}
 
+	const AddUserButton = ({ onClick }) => (
+		<button className='btn btn-primary text-light ms-auto' onClick={onClick}>
+			<i className='fas fa-plus' />
+		</button>
+	)
+
 	return (
 		<div>
 			<Header icon='fas fa-users' header='Users' subHeader='' />
 			{showUserForm ? (
 				<div>
-					<UserForm onSubmit={handleFormSubmit} onCancel={handleCancel} />
+					<UserForm onSubmit={handleFormSubmit} onCancel={handleCancel} allUsers={users} />
 				</div>
 			) : (
 				<div className='d-flex flex-column'>
-					<button className='btn btn-primary text-light mb-3 ms-auto' onClick={handleAddUserClick}>
-						<i className='fas fa-plus' />
-					</button>
-					<UserTable users={users} />
+					<UserTable users={users} addButton={<AddUserButton onClick={handleAddUserClick} />} />
 				</div>
 			)}
 		</div>

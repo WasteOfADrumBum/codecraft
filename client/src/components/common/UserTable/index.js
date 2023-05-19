@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import UserUpdateModal from '../UserUpdateModal'
 
-const UserTable = ({ users }) => {
+const UserTable = ({ users, addButton }) => {
 	const [imageSources, setImageSources] = useState({})
 
 	useEffect(() => {
@@ -33,7 +33,7 @@ const UserTable = ({ users }) => {
 						<th>Email</th>
 						<th>Username</th>
 						<th>Address</th>
-						<th />
+						<th>{addButton}</th>
 					</tr>
 				</thead>
 				<tbody>

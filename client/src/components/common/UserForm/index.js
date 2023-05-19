@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StateCountrySelect, TransitLine } from '../../common'
 
-const UserForm = ({ onSubmit, onCancel }) => {
+const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 	const [step, setStep] = useState(1)
 	const [selectedImage, setSelectedImage] = useState(null)
 	const [user, setUser] = useState({
@@ -34,6 +34,8 @@ const UserForm = ({ onSubmit, onCancel }) => {
 		{ name: 'profile_success.png', path: '../../../assets/images/profile_success.png' },
 		{ name: 'profile_warning.png', path: '../../../assets/images/profile_warning.png' },
 	]
+
+	console.log(allUsers)
 
 	const handleChange = (e) => {
 		const { name, value } = e.target
@@ -165,6 +167,36 @@ const UserForm = ({ onSubmit, onCancel }) => {
 						email: !user.email ? 'Email is required' : '',
 						password: !user.password ? 'Password is required' : '',
 					}
+				} else {
+					if (user.password.length < 8) {
+						currentStep.isValid = false
+						currentStep.errors.password = 'Password should be at least 8 characters long'
+					}
+					if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(user.password)) {
+						currentStep.isValid = false
+						currentStep.errors.password =
+							'Password should contain at least one uppercase letter, one lowercase letter, and one digit'
+					}
+				}
+
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+				if (!emailRegex.test(user.email)) {
+					currentStep.isValid = false
+					currentStep.errors.email = 'Email is not in the correct format'
+				}
+
+				// Check if username or email already exists in allUsers
+				const usernameExists = allUsers.some((u) => u.username === user.username)
+				const emailExists = allUsers.some((u) => u.email === user.email)
+
+				if (usernameExists) {
+					currentStep.isValid = false
+					currentStep.errors.username = 'Username already exists'
+				}
+
+				if (emailExists) {
+					currentStep.isValid = false
+					currentStep.errors.email = 'Email already exists'
 				}
 				break
 			case 2:
