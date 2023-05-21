@@ -10,7 +10,7 @@ import profileWarning from '../../../assets/images/profile_warning.png'
 
 const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 	const [step, setStep] = useState(1)
-	const [selectedImage, setSelectedImage] = useState('')
+	const [selectedImage, setSelectedImage] = useState({ name: '', path: '' })
 	const [user, setUser] = useState({
 		first: '',
 		middle: '',
@@ -64,15 +64,17 @@ const UserForm = ({ onSubmit, onCancel, allUsers }) => {
 				[name]: value,
 			}))
 		} else if (name === 'profileImage') {
+			setSelectedImage({ name: '', path: '' })
 			setUser((prevUser) => ({
 				...prevUser,
 				[name]: value,
 			}))
 		} else {
+			setSelectedImage({ name: '', path: '' })
 			setUser((prevUser) => ({
 				...prevUser,
 				[name]: value,
-				profileImage: selectedImage.name, // Set the selected image path
+				profileImage: selectedImage.name,
 			}))
 		}
 	}

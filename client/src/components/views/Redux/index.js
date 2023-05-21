@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement } from '../../../reducers/counterReducer'
 import { CopyBlock } from 'react-code-blocks'
 import copy from 'copy-to-clipboard'
-import { codeSnippets } from '../../../Utils/codeSnippets'
+import { codeSnippets } from '../../../utils/codeSnippets'
 
 const Redux = () => {
 	const count = useSelector((state) => state.counter.count)

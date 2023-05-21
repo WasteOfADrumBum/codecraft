@@ -57,3 +57,14 @@ export const deleteUser = async (userId) => {
 		throw new Error('Failed to delete user')
 	}
 }
+
+// Function to login a user
+export const loginUser = async (username, password) => {
+	try {
+		console.log('API: loginUser')
+		const response = await axios.post(`${API_URL}/login`, { username, password })
+		return response.data
+	} catch (error) {
+		throw new Error('Failed to login')
+	}
+}

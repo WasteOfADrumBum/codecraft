@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import UserUpdateModal from '../UserUpdateModal'
+import profileDarkImage from '../../../assets/images/profile_dark.png'
 
 const UserTable = ({ users, addButton }) => {
 	const [imageSources, setImageSources] = useState({})
@@ -14,6 +15,7 @@ const UserTable = ({ users, addButton }) => {
 					imageSources[user.profileImage] = image.default
 				} catch (error) {
 					console.error(`Failed to import image: ${user.profileImage}`)
+					imageSources[user.profileImage] = profileDarkImage
 				}
 			}
 
@@ -28,7 +30,7 @@ const UserTable = ({ users, addButton }) => {
 			<table className='table'>
 				<thead>
 					<tr>
-						<th>Profile Image</th>
+						<th />
 						<th>Name</th>
 						<th>Email</th>
 						<th>Username</th>
@@ -40,21 +42,12 @@ const UserTable = ({ users, addButton }) => {
 					{users.map((user) => (
 						<tr key={user._id}>
 							<td>
-								{user.profileImage && imageSources[user.profileImage] ? (
-									<img
-										src={imageSources[user.profileImage]}
-										alt={user.name}
-										className='img-fluid'
-										style={{ width: '25px' }}
-									/>
-								) : (
-									<img
-										src='../../../assets/images/profile_dark.png'
-										alt={user.name}
-										className='img-fluid'
-										style={{ width: '25px' }}
-									/>
-								)}
+								<img
+									src={imageSources[user.profileImage] || profileDarkImage}
+									alt={user.name}
+									className='img-fluid'
+									style={{ width: '25px' }}
+								/>
 							</td>
 							<td>
 								{user.last || user.first || user.middle ? (

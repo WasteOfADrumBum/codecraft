@@ -34,4 +34,9 @@ router.delete('/:id', (req, res) => {
 	userController.deleteUser(req, res)
 })
 
+router.post('/login', (req, res) => {
+	console.log('POST /users/login:', req.body)
+	userController.loginUser(req, res)
+})
+
 module.exports = router
