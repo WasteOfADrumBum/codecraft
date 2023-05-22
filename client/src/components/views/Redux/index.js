@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../../layout'
+import { Header, SubHeader } from '../../layout'
 import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement } from '../../../reducers/counterReducer'
 import { CopyBlock } from 'react-code-blocks'
@@ -202,7 +202,7 @@ const Redux = () => {
 			</div>
 			{/* Step 7 */}
 			<div className='row mb-2'>
-				<div className='col-md-6'>
+				<div className='col-md-12'>
 					<ul>
 						<li className='mb-2'>
 							<span className='text-primary'>Access state and dispatch actions</span>: Inside your components, use the
@@ -221,17 +221,31 @@ const Redux = () => {
 						</li>
 					</ul>
 				</div>
-				<div className='col-md-6 d-flex align-items-center justify-content-center'>
-					{/* Example */}
-					<div id='counterExample' className='text-center'>
-						<h2>Counter: {count}</h2>
-						<button className='btn btn-danger mx-1' onClick={() => dispatch(decrement())}>
-							<i className='fas fa-minus text-light' />
-						</button>
-						<button className='btn btn-success mx-1' onClick={() => dispatch(increment())}>
-							<i className='fas fa-plus text-light' />
-						</button>
-					</div>
+			</div>
+			<div className='row'>
+				<div className='col-12'>
+					<SubHeader
+						icon='fab fa-react'
+						title='React Redux Counter Example'
+						description='Demonstrating the implementation of a basic counter using React and Redux'
+					/>
+					<p>
+						This example showcases the integration of React and Redux to create a simple counter application. It
+						illustrates how to set up the Redux store, define actions, reducers, and connect the components to the store
+						using the react-redux library. The counter component allows users to increment, decrement, and reset the
+						counter value, with all state management handled by Redux. The example highlights the fundamental concepts
+						of state management in React applications using Redux, providing a solid foundation for more complex state
+						management scenarios.
+					</p>
+				</div>
+				<div id='counterExample' className='text-center col-12 mb-5'>
+					<h2>Counter: {count}</h2>
+					<button className='btn btn-danger mx-1' onClick={() => dispatch(decrement())}>
+						<i className='fas fa-minus text-light' />
+					</button>
+					<button className='btn btn-success mx-1' onClick={() => dispatch(increment())}>
+						<i className='fas fa-plus text-light' />
+					</button>
 				</div>
 			</div>
 		</div>

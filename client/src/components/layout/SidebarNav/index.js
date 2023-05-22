@@ -51,6 +51,22 @@ const Sidebar = () => {
 							<span>Users</span>
 						</NavLink>
 					</li>
+					<li className='nav-item'>
+						<NavLink
+							to='/dashboard/tensorflow'
+							className={`nav-link mb-2 ${location.pathname === '/dashboard/tensorflow' && 'text-info'}`}>
+							<i className='fa fa-robot me-1' />
+							<span>TensorFlow</span>
+						</NavLink>
+					</li>
+					<li className='nav-item'>
+						<NavLink
+							to='/dashboard/sales'
+							className={`nav-link mb-2 ${location.pathname === '/dashboard/sales' && 'text-info'}`}>
+							<i className='fa fa-chart-line me-1' />
+							<span>Sales</span>
+						</NavLink>
+					</li>
 				</ul>
 			)
 		} else if (isMdSize) {
@@ -70,6 +86,20 @@ const Sidebar = () => {
 							to='/dashboard/users'
 							className={`nav-link mb-2 ${location.pathname === '/dashboard/users' && 'text-info'}`}>
 							<i className='fa fa-users me-1' />
+						</NavLink>
+					</li>
+					<li className='nav-item'>
+						<NavLink
+							to='/dashboard/tensorflow'
+							className={`nav-link mb-2 ${location.pathname === '/dashboard/tensorflow' && 'text-info'}`}>
+							<i className='fa fa-robot me-1' />
+						</NavLink>
+					</li>
+					<li className='nav-item'>
+						<NavLink
+							to='/dashboard/sales'
+							className={`nav-link mb-2 ${location.pathname === '/dashboard/sales' && 'text-info'}`}>
+							<i className='fa fa-chart-line me-1' />
 						</NavLink>
 					</li>
 				</ul>
@@ -99,6 +129,24 @@ const Sidebar = () => {
 									onClick={closeDropdown}>
 									<i className='fa fa-users me-1' />
 									<span className='ms-1'>Users</span>
+								</NavLink>
+							</li>
+							<li>
+								<NavLink
+									to='/dashboard/tensorflow'
+									className={`dropdown-item ${location.pathname === '/dashboard/tensorflow' && 'text-info'}`}
+									onClick={closeDropdown}>
+									<i className='fa fa-robot me-1' />
+									<span className='ms-1'>TensorFlow</span>
+								</NavLink>
+							</li>
+							<li>
+								<NavLink
+									to='/dashboard/sales'
+									className={`dropdown-item ${location.pathname === '/dashboard/sales' && 'text-info'}`}
+									onClick={closeDropdown}>
+									<i className='fa fa-chart-line me-1' />
+									<span>Sales</span>
 								</NavLink>
 							</li>
 						</ul>

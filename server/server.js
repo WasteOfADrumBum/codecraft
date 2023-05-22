@@ -1,9 +1,12 @@
+// server\server.js
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
 // Import routes
 const userRoutes = require('./routes/usersRoutes')
+const tensorflowRoutes = require('./routes/tensorflowRoutes')
+const salesRoutes = require('./routes/salesRoutes')
 
 // Create Express app
 const app = express()
@@ -34,6 +37,8 @@ app.use(cors())
 
 // Routes
 app.use('/api/users', userRoutes)
+app.use('/api/tensorflow', tensorflowRoutes)
+app.use('/api/sales', salesRoutes)
 
 // Start the server
 app.listen(PORT, () => {

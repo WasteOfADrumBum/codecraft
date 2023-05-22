@@ -13,19 +13,23 @@ import PrivateRoute from './utils/privateRoute'
 createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
 		<BrowserRouter>
-			<Navbar />
-			<div className='container-lg vh-100'>
-				<Routes>
-					<Route path='/' element={<App />} />
-					<Route path='/login' element={<Login />} />
-					<Route path='/redux' element={<Redux />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/about' element={<About />} />
-					<Route path='/dashboard/*' element={<PrivateRoute component={Dashboard} />} />
-					<Route path='*' element={<NotFound />} />
-				</Routes>
+			<div className='d-flex flex-column vh-100'>
+				<Navbar />
+				<div style={{ flex: '1 0 auto', paddingBottom: '60px' }}>
+					<div className='container-lg' style={{ minHeight: 'calc(100vh - 60px)' }}>
+						<Routes>
+							<Route path='/' element={<App />} />
+							<Route path='/login' element={<Login />} />
+							<Route path='/redux' element={<Redux />} />
+							<Route path='/contact' element={<Contact />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/dashboard/*' element={<PrivateRoute component={Dashboard} />} />
+							<Route path='*' element={<NotFound />} />
+						</Routes>
+					</div>
+				</div>
+				<Footer />
 			</div>
-			<Footer />
 		</BrowserRouter>
 	</Provider>,
 )
