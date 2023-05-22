@@ -1,4 +1,4 @@
-// run using node dummyDataUtil.js in the terminal
+// run using node addSalesData.js in the terminal
 require('dotenv').config()
 const faker = require('faker')
 const mongoose = require('mongoose')

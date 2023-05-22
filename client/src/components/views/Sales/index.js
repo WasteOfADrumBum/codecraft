@@ -64,7 +64,7 @@ const Sales = () => {
 
 	return (
 		<div className='Sales'>
-			<Header icon='fas fa-code' header='Sales' subHeader='' />
+			<Header icon='fa fa-chart-line' header='Sales' subHeader='' />
 			<div className='row'>
 				<div className='col-12'>
 					{sales.length === 0 ? (
@@ -131,7 +131,7 @@ const Sales = () => {
 					)}
 				</div>
 			</div>
-			<SubHeader icon='fas fa-code' title='Graphs' description='' />
+			<SubHeader icon='fas fa-chart-pie' title='Graphs' description='' />
 			<div className='row'>
 				<div className='col-12 mb-3'>
 					<ul className='nav nav-tabs'>
@@ -149,13 +149,6 @@ const Sales = () => {
 								Price vs Quantity
 							</button>
 						</li>
-						<li className='nav-item'>
-							<button
-								className={`nav-link ${activeTab === 'donutChart' ? 'active' : ''}`}
-								onClick={() => handleTabChange('donutChart')}>
-								Product Comparison
-							</button>
-						</li>
 					</ul>
 				</div>
 				<div className='col-12 mb-3'>
@@ -171,12 +164,6 @@ const Sales = () => {
 							<ScatterPlotChart data={sales} />
 						</>
 					)}
-					{activeTab === 'donutChart' && (
-						<>
-							<h2 className='my-2 text-uppercase ms-3 text-muted fw-bold'>Product Comparison</h2>
-							<DonutChart data={sales} />
-						</>
-					)}
 				</div>
 			</div>
 		</div>
@@ -184,4 +171,3 @@ const Sales = () => {
 }
 
 export default Sales
-
